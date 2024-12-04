@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+# Ignore prettier
+.prettierignore
+/node_modules
+package-lock.json
+package.json

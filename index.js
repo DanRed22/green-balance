@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import v1Route from "./routes/v1.route.js";
 
 const app = express();
 
@@ -15,6 +16,8 @@ const PORT = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Green Balance API" });
 });
+
+app.use("/api/v1", v1Route);
 
 // Start server
 app.listen(PORT, () => {

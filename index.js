@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Green Balance API" });
 });
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Welcome to Green Balance API" });
+});
+
 app.use("/api/v1", v1Route);
 
 // Start server

@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model user {
   id        String   @id @default(cuid())
   email     String   @unique
   username  String
@@ -15,4 +15,29 @@ model User {
   updatedAt DateTime @updatedAt
   deletedAt DateTime?
   status    String   @default("active")
+  token     String?
+  tokenExp  DateTime?
+}
+
+model notebook {
+  id        String   @id @default(cuid())
+  title     String
+  description String?
+  userId    String
+  value     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deletedAt DateTime?
+}
+
+model entry {
+  id        String   @id @default(cuid())
+  title     String
+  value     Float
+  description String?
+  notebookId  String
+  userId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  deletedAt   DateTime?
 }

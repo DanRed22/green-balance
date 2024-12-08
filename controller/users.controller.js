@@ -32,3 +32,17 @@ export const createUser = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const updateUser = async (req, res) => {
+  const { id } = req.params;
+  const { username } = req.body;
+  try {
+    const user = await prisma.user.update({
+      where: { id },
+      data: { username },
+    });
+    res.json({ success: true, message: "Update user", data: user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

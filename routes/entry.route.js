@@ -12,6 +12,6 @@ entryRouter.get("/:userId", getAllEntries);
 entryRouter.get("/:id", getEntryById);
 entryRouter.post("/", createEntry);
 entryRouter.put("/", updateEntry);
-entryRouter.delete("/", deleteEntry);
+entryRouter.put("/delete", deleteEntry);
 
 export default entryRouter;

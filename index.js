@@ -14,11 +14,19 @@ const PORT = process.env.PORT || 3000;
 
 // Basic route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Green Balance API" });
+  res.json({
+    success: true,
+    error: false,
+    message: "Welcome to Green Balance API",
+  });
 });
 
 app.get("/api", (req, res) => {
-  res.json({ message: "Welcome to Green Balance API" });
+  res.json({
+    success: true,
+    error: false,
+    message: "Welcome to Green Balance API",
+  });
 });
 
 app.use("/api/v1", v1Route);
